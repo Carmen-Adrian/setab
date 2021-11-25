@@ -1,0 +1,145 @@
+{
+  "es": {
+    "Portal": "Portal Noticias",
+    "somos": "¿Quiénes somos?",
+    "inicio": "Inicio",
+    "directorio": "Directorio",
+    "Convocatoria":"Convocatoria",
+    "Tramites":"Tramites",
+
+    "avisos1": "AVISOS",
+    "mostrar": "Mostrar más",
+
+    "escolar":"Directorio escolar",
+    "general2":"Directorio general",
+    
+    "leer":"LEER AQUI NUESTRO AVISO DE PRIVACIDAD",
+    "accerder": "ACCEDER",
+    "recupera": "RECUPERA AQUÍ TU CONTRASEÑA",
+
+    "bienvenido": "Bienvenido:",
+    "ir":"¿A dónde quiere ir?",
+    "noticias": "Noticias",
+    "detalles": "Detalles",
+
+    "regresar": "REGRESAR",
+    "anadir-noticia": "AÑADIR NOTICIA",
+
+ 
+    "titulo": "Titulo",
+    "foto": "FOTO",
+    "subtitulo": "Subtitulo",
+    "categoria": "Categoria",
+    "acciones": "ACCIONES",
+    
+    "directorioescolar": "Directorio Escolar",
+    "directoriogeneral": "Directorio general",
+    "anadir-directorio": "AÑADIR DIRECTORIO",
+
+    "cargo": "CARGOS",
+    "nombre": "NOMBRE",
+    "correo": "CORREO",
+    "telefono": "TELÉFONO",
+    "escuela": "ESCUELA",
+    "municipio": "MUNICIPIO",
+    "noticias-1": "NOTICIAS",
+    "directorio-1": "DIRECTORIO",
+    "horario-de-atencion": "HORARIO DE ATENCIÓN"
+  
+    
+  },
+  "en": {
+    "Portal": "Portal News",
+    "somos": "Who are we?",
+    "inicio": "Homepage",
+    "directorio": "Directory",
+    "Convocatoria": "Announcement",
+    "Tramites": "Formalities",
+
+    "avisos1": "NOTICES",
+    "mostrar": "Show more",
+
+    "escolar":"School directory",
+    "general2":"General Directory",
+    
+    "acceder": "lOG IN",
+    "recupera": "RECOVER YOUR PASSWORD HERE",
+    "leer":"READ OUR PRIVACY NOTICE HERE",
+
+    "bienvenido": "Welcome:",
+    "ir":"Where do you want to go?",
+    "noticias": "News",
+    "detalles": "Details",
+
+    "regresar": "TO RETURN",
+    "anadir-noticia": "ADD NEWS",
+
+    "titulo": "Title",
+    "foto": "PHOTO",
+    "subtitulo": "Subtitle",
+    "categoria": "Category",
+    "acciones": "ACTIONS",
+    
+    "directorioescolar": "School directory",
+    "directoriogeneral": "General directory",
+    "anadir-directorio": "ADD DIRECTORY",
+
+    "cargo": "CHARGES",
+    "nombre": "NAME",
+    "correo": "MAIL",
+    "telefono": "TELEPHONE",
+    "escuela": "SCHOOL",
+    "municipio": "MUNICIPALITY",
+    "noticias-1": "NEWS",
+    "directorio-1": "DIRECTORY",
+    "horario-de-atencion": "HOURS OF ATTENTION"
+    
+  },
+  "chol": {
+    "Portal": "Ik'eloñib su'boñel",
+    "somos": "Who are we?",
+    "inicio": "Homepage",
+    "directorio": "Iyäk'tyojlel",
+    "Convocatoria": "Announcement",
+    "Tramites": "Formalities",
+
+    "avisos1": "NOTICES",
+    "mostrar": "Ibix pästyäl",
+
+    "escolar":"Iyäk'tyojlel pejtyel",
+    "general2":"Iyäk'tyojlel  ak'ejuñob",
+    
+    "acceder": "lOG IN",
+    "recupera": "Acha'tyajeb awochib",
+    "leer":"READ OUR PRIVACY NOTICE HERE",
+
+    "bienvenido": "Welcome:",
+    "ir":"Where do you want to go?",
+    "noticias": "News",
+    "detalles": "Details",
+
+    "regresar": "TO RETURN",
+    "anadir-noticia": "Tyäjk'ib su'boñel",
+
+    "titulo": "Ijol ts'ijbuñtyel",
+    "foto": "Lok'om",
+    "subtitulo": "Iye'bal ijol ts'ijbuñtyel",
+    "categoria": "Su'boñel cha'añ apäsjuñ",
+    "acciones": "ACTIONS",
+    
+    "directorioescolar": "Iyäk'tyojlel pejtyel",
+    "directoriogeneral": "Iyäk'tyojlel  ak'ejuñob",
+    "anadir-directorio": "ADD DIRECTORY",
+
+    "cargo": "Iye'tyelob",
+    "nombre": "K'aba'",
+    "correo": "Kaxlañ suboñel",
+    "telefono": "Kaxlañ ñajtyäty'añ",
+    "escuela": "Iyotyotylel ak'ejuñob",
+    "municipio": "lJol bi'tyilumtyak",
+    "noticias-1": "NEWS",
+    "directorio-1": "Iyäk'tyojlel",
+    "horario-de-atencion": "Yorärlel cha'liyaj"
+    
+  }
+}

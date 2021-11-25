@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Seccion de los estilos de fuente -->
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <!--secccion de estilos de fontawesome-->
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+    <!--seccion de estilos de bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <!--seccion de estilos-->
+    <link rel="stylesheet" href="/css/styles.css">
+    <!--seccion de estilos de barra de carga de pagina-->
+    <script src="/js/pace.min.js"></script>
+    <link href="/css/pace-theme-flash.css" rel="stylesheet" />
+    <!--seccion de icono pagina-->
+    <link rel="shortcut icon" href="/img/favicon_0.png" type="image/png" />
+    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typeahead.js/0.11.1/typeahead.bundle.min.js"></script>
+    
+
+    <!--titulo-->
+    <%- include('partials/title'); -%>
+</head>
+
+<body class="fuente">
+    <!-- Comienza el Navbar -->
+    <header class="mt-5">
+        <%- include('partials/header'); -%>
+    </header>
+    <br>
+   
+    <!--Terina seccion de Navbar-->
+    <!-- Inicia Seccion carrucel -->
+    <%- include('partials/carrusel'); -%>
+        <!--Termina seccion carrucel-->
+        <!-- Comienza Secccion noticias -->
+      
+        <div class="container">
+            <h2 class="card-body text-secondary lang" key="avisos1" id="avisos">AVISOS</h2>
+            <div id="divPadre1">
+                <div class="row row-cols-1 row-cols-md-3 ">
+                    <% results.forEach((noticias)=>{ %>
+                        <!-- Comienza Card noticia 1 -->
+                        <div class="col">
+                            <div class="contenedor">
+                                <div class="responsive">
+                                    <a href="/detalles/<%= noticias.id %>">
+                                        <img src="/uploads/FOTO BOLETÍN 2761 INJUDET 10092021.WebP" class="card-img-top"
+                                            alt="...">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="card-body  ">
+                                <%= noticias.id %>
+                                    <button type="button" class="btn btn-sm "
+                                        style="background-color: rgba(179,142,93,255)">
+                                        <a class="text-white" style="text-decoration:none" href="#">
+                                            <%= noticias.category %>
+                                        </a>
+                                    </button>
+                                    <h5 class="card-title ">
+                                        <a style="text-decoration:none" href="/details/<%= noticias.id %>">
+                                            <%= noticias.title %>
+                                        </a>
+                                    </h5>
+                            </div>
+                        </div>
+                        <!-- Termina Card noticia 1 -->
+                        <% }) %>
+                </div>
+            </div>
+            <!--boton mostrar mas-->
+            <div class="d-grid gap-2">
+                <div class="d-grid gap-2" id="show-more"></div>
+                <a class="btn   button text-white lang" style="background-color: rgb(177, 87, 57)" id="btnCargar"
+                    key="mostrar">
+                    <i class="fa fa-eye text-white"></i> Mostrar más
+                </a>
+            </div>
+        </div>
+
+        </div>
+
+        <!--
+        <h2 class="card-body text-secondary lang" key="reciente1" id="reciente">RECIENTES</h2>
+        <div id="divPadre1">
+            <div class="row row-cols-1 row-cols-md-3 ">
+
+                <div class="col  ">
+                    <div class="contenedor">
+                        <div class="responsive">
+                            <a href="./detalles">
+                                <img src="./img/publico general/FOTO BOLETÍN 2761 INJUDET 10092021.jpg"
+                                    class="card-img-top" alt="...">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="card-body  ">
+                        <button type="button" class="btn btn-sm " style="background-color: rgba(179,142,93,255)"><a
+                                class="text-white" style="text-decoration:none" href="#"> Lorem
+                            </a></button>
+
+                        <h5 class="card-title "> <a style="text-decoration:none"
+                                href="https://tabasco.gob.mx/noticias/lluvias-marcaran-el-jueves-en-la-sierra-rios-y-parte-de-la-chontalpa">
+                                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                            </a>
+                        </h5>
+                    </div>
+                </div>
+
+                <div class="col  ">
+                    <div class="contenedor">
+                        <div class="responsive">
+                            <a href="./detalles">
+                                <img src="./img/publico general/FOTO BOLETÍN 2761 INJUDET 10092021.jpg"
+                                    class="card-img-top" alt="...">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="card-body  ">
+                        <button type="button" class="btn btn-sm " style="background-color: rgba(179,142,93,255)"><a
+                                class="text-white" style="text-decoration:none" href="#"> Lorem
+                            </a></button>
+
+                        <h5 class="card-title "> <a style="text-decoration:none"
+                                href="https://tabasco.gob.mx/noticias/lluvias-marcaran-el-jueves-en-la-sierra-rios-y-parte-de-la-chontalpa">
+                                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                            </a>
+                        </h5>
+                    </div>
+                </div>
+
+                <div class="col  ">
+                    <div class="contenedor">
+                        <div class="responsive">
+                            <a href="./detalles">
+                                <img src="./img/publico general/FOTO BOLETÍN 2761 INJUDET 10092021.jpg"
+                                    class="card-img-top" alt="...">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="card-body  ">
+                        <button type="button" class="btn btn-sm " style="background-color: rgba(179,142,93,255)"><a
+                                class="text-white" style="text-decoration:none" href="#"> Lorem
+                            </a></button>
+
+                        <h5 class="card-title "> <a style="text-decoration:none"
+                                href="https://tabasco.gob.mx/noticias/lluvias-marcaran-el-jueves-en-la-sierra-rios-y-parte-de-la-chontalpa">
+                                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                            </a>
+                        </h5>
+                    </div>
+                </div>
+            </div>
+            <div class="d-grid gap-2">
+                <button class="btn text-white lang" style="background-color: rgb(177, 87, 57)" type="button"
+                    onclick="mostrarMas(this)" key="mostrar">Mostrar más</button>
+            </div>
+        </div>
+
+        
+        <br>
+        <h2 class="card-body text-secondary lang" key="general1" id="general">GENERALES</h2>
+        <div id="divPadre">
+            <div class="row row-cols-1 row-cols-md-3 ">
+
+                <div class="col  ">
+                    <div class="contenedor">
+                        <div class="responsive">
+                            <a href="./detalles">
+                                <img src="./img/publico general/FOTO BOLETÍN 2761 INJUDET 10092021.jpg"
+                                    class="card-img-top" alt="...">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="card-body  ">
+                        <button type="button" class="btn btn-sm " style="background-color: rgba(179,142,93,255)"><a
+                                class="text-white" style="text-decoration:none" href="#"> Salud
+                            </a></button>
+                        <h5 class="card-title "> <a style="text-decoration:none"
+                                href="https://tabasco.gob.mx/noticias/lluvias-marcaran-el-jueves-en-la-sierra-rios-y-parte-de-la-chontalpa">
+                                Lluvias marcarán el jueves en la Sierra, Ríos y parte de la Chontalpa
+                            </a>
+                        </h5>
+                    </div>
+                </div>
+
+                <div class="col  ">
+                    <div class="contenedor">
+                        <div class="responsive">
+                            <a href="./detalles">
+                                <img src="./img/publico general/FOTO BOLETÍN 2761 INJUDET 10092021.jpg"
+                                    class="card-img-top" alt="...">
+                            </a>
+                        </div>
+
+                    </div>
+                    <div class="card-body  ">
+                        <button type="button" class="btn btn-sm " style="background-color: rgba(179,142,93,255)"><a
+                                class="text-white" style="text-decoration:none" href="#"> Salud
+                            </a></button>
+
+                        <h5 class="card-title "> <a style="text-decoration:none"
+                                href="https://tabasco.gob.mx/noticias/lluvias-marcaran-el-jueves-en-la-sierra-rios-y-parte-de-la-chontalpa">
+                                Lluvias marcarán el jueves en la Sierra, Ríos y parte de la Chontalpa
+                            </a></h5>
+                    </div>
+                </div>
+
+                <div class="col  ">
+                    <div class="contenedor">
+                        <div class="responsive">
+                            <a href="./detalles">
+                                <img src="./img/publico general/FOTO BOLETÍN 2761 INJUDET 10092021.jpg"
+                                    class="card-img-top" alt="...">
+                            </a>
+                        </div>
+
+                    </div>
+                    <div class="card-body  ">
+                        <button type="button" class="btn btn-sm " style="background-color: rgba(179,142,93,255)"><a
+                                class="text-white" style="text-decoration:none" href="#"> Salud
+                            </a></button>
+
+                        <h5 class="card-title "> <a style="text-decoration:none"
+                                href="https://tabasco.gob.mx/noticias/lluvias-marcaran-el-jueves-en-la-sierra-rios-y-parte-de-la-chontalpa">
+                                Lluvias marcarán el jueves en la Sierra, Ríos y parte de la Chontalpa
+                            </a></h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="d-grid gap-2">
+            <button class="btn text-white lang" style="background-color: rgb(177, 87, 57)" type="button"
+                onclick="mostrarMas1(this)" key="mostrar">Mostrar más</button>
+        </div>
+        <br>
+        
+    </div>
+-->
+
+
+        <!--Termina seccion noticias-->
+        <!--Inica Footer -->
+        <%- include('partials/footer'); -%>
+            <!--Termina footer-->
+            <!--script para le funcionamiento del mostrar mas-->
+            <script type="text/javascript">
+                $(document).ready(function(){
+                    $('input.typeahead').typeahead({
+                        name: 'countries',
+                        remote: 'http://localhost:4200/search?key=%QUERY',
+                        limit: 10
+                    });
+                });
+                </script>
+            <script type="text/javascript">
+                $('#btnCargar').click(function () {
+                    var esperar = 800;
+                    $.ajax({
+                        url: "show-more",
+                        beforeSend: function () {
+                            $('#show-more').html('<div class="loading"><img src="img/loader.gif"  /><br/>Un momento...</div>');
+                        },
+                        success: function (data) {
+                            setTimeout(function () {
+                                $('#show-more').html(data);
+                            }, esperar
+                            );
+                        }
+                    });
+                });
+            </script>
+      
+            <!-- Scripts para el funcinamiento de los estilos de bootstrap -->
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+                crossorigin="anonymous"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+                integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+                crossorigin="anonymous"></script>
+            <!--script para el funcionamiento del multilenguaje-->
+            <script src="/js/script.js"></script>
+            <!--script para le funcinamiento de los iconos de fontawesome-->
+            <script src="https://kit.fontawesome.com/ccf41397b0.js" crossorigin="anonymous"></script>
+            <!--scrip para optimar tiempo de carga de la pagina-->
+            
+</body>
+
+</html>

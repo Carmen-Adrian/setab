@@ -1,0 +1,78 @@
+<div class="row row-cols-1 row-cols-md-3 ">
+    <% results.forEach((noticia)=>{ %>
+        <!-- Comienza Card noticia 1 -->
+        <div class="col">
+            <div class="contenedor">
+                <div class="responsive">
+                    <a href="/detalles/<%= noticias.id %>">
+                        <img src="/uploads/FOTO BOLETÍN 2761 INJUDET 10092021.WebP" class="card-img-top"
+                            alt="...">
+                    </a>
+                </div>
+            </div>
+            <div class="card-body  ">
+                <%= noticias.id %>
+                    <button type="button" class="btn btn-sm "
+                        style="background-color: rgba(179,142,93,255)">
+                        <a class="text-white" style="text-decoration:none" href="#"> Publico general |
+                            <%= noticias.category %>
+                        </a>
+                    </button>
+                    <h5 class="card-title ">
+                        <a style="text-decoration:none" href="/detalles/<%= noticias.id %>">
+                            <%= noticias.subtitle %>
+                        </a>
+                    </h5>
+            </div>
+        </div>
+        <!-- Termina Card noticia 1 -->
+        <div class="col">
+            <div class="contenedor">
+                <div class="responsive">
+                    <a href="/detalles/<%= noticias.id %>">
+                        <img src="/uploads/FOTO BOLETÍN 2761 INJUDET 10092021.WebP" class="card-img-top"
+                            alt="...">
+                    </a>
+                </div>
+            </div>
+            <div class="card-body  ">
+                <%= noticias.id %>
+                    <button type="button" class="btn btn-sm "
+                        style="background-color: rgba(179,142,93,255)">
+                        <a class="text-white" style="text-decoration:none" href="#"> Publico general |
+                            <%= noticias.category %>
+                        </a>
+                    </button>
+                    <h5 class="card-title ">
+                        <a style="text-decoration:none" href="/detalles/<%= noticias.id %>">
+                            <%= noticias.subtitle %>
+                        </a>
+                    </h5>
+            </div>
+        </div>
+        <div class="col">
+            <div class="contenedor">
+                <div class="responsive">
+                    <a href="/detalles/<%= noticias.id %>">
+                        <img src="/uploads/FOTO BOLETÍN 2761 INJUDET 10092021.WebP" class="card-img-top"
+                            alt="...">
+                    </a>
+                </div>
+            </div>
+            <div class="card-body  ">
+                <%= noticias.id %>
+                    <button type="button" class="btn btn-sm "
+                        style="background-color: rgba(179,142,93,255)">
+                        <a class="text-white" style="text-decoration:none" href="#"> Publico general |
+                            <%= noticias.category %>
+                        </a>
+                    </button>
+                    <h5 class="card-title ">
+                        <a style="text-decoration:none" href="/detalles/<%= noticias.id %>">
+                            <%= noticias.subtitle %>
+                        </a>
+                    </h5>
+            </div>
+        </div>
+        <% }) %>
+</div>

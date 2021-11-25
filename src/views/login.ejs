@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!--seccion de estilos de fuente de google-->
+  <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+  <!--seccion de estilos de fontawesome para los iconos-->
+  <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+  <!--seccion de estilos de bootstrap-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <!--seccion de estilos de material icons-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!-- seccion de compilado del CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <!--seccion de estilos-->
+  <link rel="stylesheet" href="/css/styles.css">
+  <!--seccion de estilos de barra de carga de pagina-->
+  <script src="/js/pace.min.js"></script>
+  <link href="/css/pace-theme-flash.css" rel="stylesheet" />
+  <!--seccion de icono pagina-->
+  <link rel="shortcut icon" href="/img/favicon_0.png" type="image/png" />
+  <!--titulo-->
+  <%- include('partials/title'); -%>
+</head>
+
+<body class="login-bg ">
+  <div class="col s12" style="margin:auto; width: 640px; ">
+    <div class="container" style="  padding-top: 40px; ">
+      <div id="login-page" class="row">
+        <div class="col s12 m8 l6 xl4 z-depth-4  border-radius-6 login-card bg-opacity-8">
+          <form class="login-form" id="flogin" action="/login" method="post" style="padding: 7px; ">
+            <input type="hidden" name="grant_type" value="password">
+            <input type="hidden" name="client_id" value="setabapp">
+            <input type="hidden" name="topage" value="private">
+            <div class="row">
+              <div class="input-field col s12" style="text-align:center">
+                <img style="width:15%;height:auto;" src="/img/favicon_0.png">
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s12">
+                <i class="material-icons prefix pt-2">person_outline</i>
+                <input id="user" name="user" type="text" placeholder="Id de usuario" value="">
+                <label for="user" class="center-align active">Usuario ID</label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s12">
+                <i class="material-icons prefix pt-2">lock_outline</i>
+                <input id="pass" name="pass" type="password" placeholder="Contraseña" value="">
+                <label for="pass" class="active lang" key="contrase">Contraseña</label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s12">
+
+                <div class="input-field col s12" style="text-align:center;font-size:1em;font-weight:bold;">
+                  <span>LEER <a href="https://webcore.setab.gob.mx/setab/ANUNCIO_DE_PRIVACIDAD.pdf"
+                      style="color:rgb(104, 61, 46)" target="_blank">AQUÍ</a> NUESTRO AVISO DE PRIVACIDAD</span>
+                </div>
+                <a>
+                  <button type="submit" class="btn btn-large waves-effect waves-light text-light col s12 lang"
+                    key="acceder" style="background:#B13752">Acceder
+                  </button>
+                </a>
+          </form>
+          <div class="row">
+            <div class="input-field col s12" style="text-align:center;font-size:1em;font-weight:bold;">
+              <a class="lang" style="text-decoration:none" href="https://aplicaciones.setab.gob.mx/webcorex"
+                key="recupera" target="_blank">RECUPERA AQUÍ TU CONTRASEÑA</a>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  
+    <!--script para el funcinamiento de bootstrap-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+      crossorigin="anonymous"></script>
+    <!--script para el funcinamiento del multilenguaje-->
+    <script src="/js/script.js"></script>
+    <!--script para el funcinamiento del sweetalert-->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <% if(alert) { %>
+      <script>
+        Swal.fire({
+          title: '<%= alertTitle %>',
+          text: '<%= alertMessage %>',
+          icon: '<%= alertIcon %>',
+          showConfirmButton: '<%= showConfirmButton %>',
+          timer: '<%= timer %>',
+          confirmButtonColor: '<%= confirmButtonColor %>',
+        }).then(() => {
+          window.location = '/<%= ruta %>'
+        })
+      </script>
+      <% } %>
+        <!-- Compiled and minified JavaScript -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <!--scrip para optimar tiempo de carga de la pagina-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Seccion de los estilos de fuente -->
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <!--seccion de estilos de fontawesome para los iconos-->
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+    <!--seccion de estilos de bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <!--seccion de estilos-->
+    <link rel="stylesheet" href="/css/styles.css">
+    <!--seccion de estilos de barra de carga de pagina-->
+    <script src="/js/pace.min.js"></script>
+    <link href="/css/pace-theme-flash.css" rel="stylesheet" />
+    <!--seccion de icono pagina-->
+    <link rel="shortcut icon" href="/img/favicon_0.png" type="image/png" />
+    <!--titulo-->
+    <%- include('partials/title'); -%>
+</head>
+
+<body>
+    <!-- Comienza el Navbar -->
+    <header class="mb-5">
+        <%- include('partials/header-admin'); -%>
+    </header>
+    <!--Terina seccion de Navbar-->
+    <!-- Comienza Secccion noticias -->
+    <div class="container  ">
+        <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+            <div
+                class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                <h2> <span class="lang" key="bienvenido">Bienvenido</span>
+                    <% if (user) { %>
+                        <span class="badge bg-success">
+                            <%= user.name %>
+                        </span>
+                        <% } %>
+                </h2>
+            </div>
+        </main>
+        <main class="centrar">
+            <h2 class="lang" key="ir">A donde quiere ir:
+            </h2>
+        </main>
+        <div class="container  ">
+            <div id="divPadre1">
+                <div class="row row-cols-1 row-cols-md-2">
+                    <div class="col  ">
+                        <div>
+                            <div class="responsive tam-opciones ">
+                                <a href="/add-news" class="btn card-img-top text-white"
+                                    style="background-color: #9d2449">
+                                    <i class="far fa-newspaper text-white"></i>
+                                    <span key="noticias-1" class="lang">NOTICIAS</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col  ">
+                        <div>
+                            <div class="responsive tam-opciones">
+                                <a href="/add-directory" class="btn  btn-sm-5  card-img-top text-white"
+                                    style="background-color: #9d2449 ">
+                                    <i class="far fa-address-book text-white"></i>
+                                    <span key="directorio-1" class="lang">DIRECTORIO</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Termina seccion noticias-->
+    <!--Inica Footer -->
+    <%- include('partials/footer'); -%>
+        <!--Termina footer-->
+        <!--Comienza seccion scripts-->
+        <!-- Scripts para el funcinamiento de los estilos de bootstrap -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+            crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+        <!--Script para el funcionamiento del multilenguaje-->
+        <script src="/js/script.js"></script>
+        <!--script para le funcinamiento de los iconos de fontawesome-->
+        <script src="https://kit.fontawesome.com/ccf41397b0.js" crossorigin="anonymous"></script>
+        <!--scrip para optimar tiempo de carga de la pagina-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</body>
+
+</html>

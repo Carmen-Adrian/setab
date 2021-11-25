@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Seccion de los estilos de bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <!--seccion de estilos de icono de boxicons-->
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <!--seccion de estilos de icnos de fontawesome -->
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+    <!--seccion de estilo de fuente-->
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <!--seccion de estilos-->
+    <link rel="stylesheet" href="/css/styles.css">
+    <!--seccion de estilos de barra de carga de pagina-->
+    <script src="/js/pace.min.js"></script>
+    <link href="/css/pace-theme-flash.css" rel="stylesheet" />
+    <!--seccion de icono pagina-->
+    <link rel="shortcut icon" href="/img/favicon_0.png" type="image/png" />
+    <!--titulo-->
+    <%- include('partials/title'); -%>
+</head>
+
+<body >
+    <!-- Comienza el Navbar -->
+    <header class="mb-5">
+        <%- include('partials/header-admin'); -%>
+    </header>
+    <!--Terina seccion de Navbar-->
+    <!--Comienza seccion de direcotrio general-->
+    <!--DIrectorioi general-->
+    <div align="center">
+        <button type="button" class="btn text-white mb-4 lang" key="general2"
+            style="background-color: rgba(179,142,93,255)">
+            <span>Directorio general</span> </button>
+    </div>
+    <table class="table container mb-4">
+        <thead>
+            <tr>
+                <th class="lang" key="cargo" scope="col">Cargos</th>
+                <th class="lang" key="nombre" scope="col">Nombre</th>
+                <th class="lang" key="correo" scope="col">Correo</th>
+                <th class="lang" key="telefono" scope="col">Teléfono</th>
+                <th class="lang" key="foto" scope="col">Foto</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td data-label="Cargo">Titular</td>
+                <td data-label="Nombre">Dra. Egla Cornelio Landero</td>
+                <td data-label="Correo">egla.cornelio@correo.setab.gob.mx</td>
+                <td data-label="Telefono">+52 (993) 4 27 01 61</td>
+                <td data-label="Foto"><img src="./img/directorio/user_prueba.png" width="80" height="80"></td>
+
+            </tr>
+        </tbody>
+    </table>
+    <!--Termina seccion de direcotrio general-->
+    <!--Comienza seccion de direcotrio escolar-->
+    <!--DIrectorioi escuela-->
+    <div align="center" class="mb-4">
+        <button type="button" class="btn text-white lang" key="escolar" style="background-color: rgba(179,142,93,255)">
+            <span>Directorio
+                escolar</span> </button>
+    </div>
+    <div class="container">
+        <a href="/login-admin" class="btn  btn-sm-5  btn-sm-5 clase_table text-white"
+            style="background-color: #9d2449">
+            <i class="fas fa-arrow-circle-left text-white lang" key="regresar">REGRESAR</i>
+        </a>
+        <a class="btn  btn-sm-5  clase_table text-white" data-bs-toggle="modal" data-bs-target="#modalForm"
+            style="background-color: #9d2449 ">
+            <i class="bx bxs-plus-circle  text-white lang" key="anadir-directorio">AÑADIR DIRECTORIO</i>
+        </a>
+    </div>
+    <div>
+    </div>
+    <br>
+    <table class=" table container">
+        <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col" class="lang" key="cargo">Cargos</th>
+                <th scope="col" class="lang" key="nombre">Nombre</th>
+                <th scope="col">CCT</th>
+                <th scope="col" class="lang" key="escuela">Escuela</th>
+                <th scope="col" class="lang" key="municipio">Municipio</th>
+                <th scope="col" class="lang" key="correo">Correo</th>
+                <th scope="col" class="lang" key="telefono">Telefono</th>
+                <th scope="col" class="lang" key="horario-de-atencion">Horario de atencion</th>
+                <th scope="col" class="lang" key="foto">Foto</th>
+                <th scope="col" class="lang" key="acciones">Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!--Comienza seccion donde se mandan a llamar las  consulta para mostrar el directorio-->
+            <% results1.forEach((directorio_escolar)=>{ %>
+                <tr>
+                    <td data-label="Id">
+                        <%= directorio_escolar.id %>
+                    </td>
+                    <td data-label="Cargo">
+                        <%= directorio_escolar.loads %>
+                    </td>
+                    <td data-label="Nombre">
+                        <%= directorio_escolar.name %>
+                    </td>
+                    <td data-label="CCT">
+                        <%= directorio_escolar.cct %>
+                    </td>
+                    <td data-label="Escuela">
+                        <%= directorio_escolar.school %>
+                    </td>
+                    <td data-label="Municipio">
+                        <%= directorio_escolar.municipality %>
+                    </td>
+                    <td data-label="Correo">
+                        <%= directorio_escolar.mail %>
+                    </td>
+                    <td data-label="Telefono">
+                        <%= directorio_escolar.telephone %>
+                    </td>
+                    <td data-label="Horario de atencion">
+                        <%= directorio_escolar.business_hours %>
+                    </td>
+                    <td data-label="Foto">
+                        <%= directorio_escolar.image %>
+                    </td>
+
+                    <td>
+                        <!--boton editar y abrir modal editar directorio-->
+                        <a onclick="guardarDato('<%= directorio_escolar.id %>')" data-bs-toggle="modal"
+                            data-bs-target="#modalForm1" class="btn btn-outline-info" data-id="1"><i
+                                class="far fa-edit"></i>
+                        </a>
+                        <p>
+                        </p>
+                        <!--boton de modal para anadir imagen-->
+                        <a onclick="guardarImagen1()" class="btn  btn-outline-dark " data-bs-toggle="modal"
+                            data-bs-target="#modalForm2">
+                            <i class="far fa-image"></i></a>
+                        <p>
+                        </p>
+                        <!--boton para eliminar directorio-->
+                        <a onclick="eliminar1('<%= directorio_escolar.id %>')" class="btn btn-outline-danger "><i
+                                class="far fa-trash-alt"></i></a>
+                        </a>
+                    </td>
+
+                </tr>
+                <% }) %>
+        </tbody>
+    </table>
+    <!--Termina seccion donde se mandan a llamar las  consulta para mostrar el directorio-->
+    <!--Comienza modal editar directorio-->
+    <div class="modal fade" id="modalForm1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <% if (directorio_escolar) { %>
+                        <form action="/update_directory" method="POST" class="was-validated">
+                            <fieldset class="container mt-4 scheduler-border">
+                                <legend class="content mb-5 scheduler-border"> <span>EDICIÓN DIRECTORIO</span>
+                                    <button type="submit" class="search-container btn  text-light mover "
+                                        style="background-color: #9d2449" tabindex="5"><i
+                                            class="fas fa-cloud"></i>&nbsp; Guardar</button>
+                                    <a href="/add-directory"><button type="button"
+                                            class=" search-container btn  text-light mover"
+                                            style="background-color: #dd9f42"><i class="fas fa-times"></i>&nbsp;
+                                            Cancelar </button></a>
+                                </legend>
+                                <!--Comienza el formulario de agregar un nueva notica-->
+                                <fieldset class="container mt-4  scheduler-border1">
+                                    <legend class="content mb-4 scheduler-border1 text-light"> <span> <i
+                                                class="far fa-newspaper text-white"></i>&nbsp; EDICIÓN
+                                            DIRECTORIO</span>
+                                    </legend>
+                                    <input id="id" name="id" value="<%= directorio_escolar.id %>" hidden>
+                                    <div class="row row-cols-1 row-cols-md-2">
+                                        <div class="col">
+                                            <div class="mb-4">
+                                                <input type="text" class="form-control" id="loads" name="loads"
+                                                    tabindex="1" value="<%= directorio_escolar.loads %>"
+                                                    aria-label="Cargo" placeholder="Cargo" required>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="mb-4">
+                                                <input type="text" class="form-control" id="cct" name="cct" tabindex="1"
+                                                    value="<%= directorio_escolar.cct %>" aria-label="CTT"
+                                                    placeholder="CTT" required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row row-cols-1 row-cols-md-1">
+                                        <div class="col">
+                                            <div class="mb-4">
+                                                <input type="text" class="form-control" id="name" name="name"
+                                                    tabindex="1" value="<%= directorio_escolar.name %>"
+                                                    aria-label="nombre" placeholder="Nombre" required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row row-cols-1 row-cols-md-2">
+                                        <div class="col">
+                                            <div class="mb-4">
+                                                <input type="text" class="form-control" id="school" name="school"
+                                                    tabindex="1" value="<%= directorio_escolar.school %>"
+                                                    aria-label="Escuela" placeholder="Escuela" required>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="mb-4">
+                                                <select id="municipality" name="municipality" class="form-select "
+                                                    aria-label="Default select example" tabindex="2" required>
+                                                    <option value="" selected>
+                                                        <%= directorio_escolar.municipality %>
+                                                    </option>
+                                                    <option value="Balancan">Balancán</option>
+                                                    <option value="Cardenas">Cárdenas</option>
+                                                    <option value="Centla">Centla</option>
+                                                    <option value="Centro">Centro</option>
+                                                    <option value="Comalcalco">Comalcalco</option>
+                                                    <option value="Cunduacan">Cunduacán</option>
+                                                    <option value="Emiliano Zapata">Emiliano Zapata</option>
+                                                    <option value="Huimanguillo">Huimanguillo</option>
+                                                    <option value="Jalapa">Jalapa</option>
+                                                    <option value="Jalapa de Méndez">Jalpa de Méndez</option>
+                                                    <option value="Jonuta">Jonuta</option>
+                                                    <option value="Macuspana">Macuspana</option>
+                                                    <option value="Nacajuca">Nacajuca</option>
+                                                    <option value="Paraíso">Paraíso</option>
+                                                    <option value="Tacotalpa">Tacotalpa</option>
+                                                    <option value="Teapa">Teapa</option>
+                                                    <option value="Tenosique">Tenosique</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row row-cols-1 row-cols-md-3">
+                                        <div class="col">
+                                            <div class="mb-4">
+                                                <input type="text" class="form-control" id="mail" name="mail"
+                                                    tabindex="1" value="<%= directorio_escolar.mail %>"
+                                                    aria-label="Correo" placeholder="Correo" required>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="mb-4">
+                                                <input type="text" class="form-control" id="telephone" name="telephone"
+                                                    tabindex="1" value="<%= directorio_escolar.telephone %>"
+                                                    aria-label="Télefono" placeholder="Teléfono" required>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="mb-4">
+                                                <input type="text" class="form-control" id="business_hours"
+                                                    name="business_hours" tabindex="1"
+                                                    value="<%= directorio_escolar.business_hours %>"
+                                                    aria-label="Horario" placeholder="Horario" required>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                </fieldset>
+                            </fieldset>
+                        </form>
+
+                        <% } %>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Termina modal editar directorio-->
+    <!-- Comienza modal crear directorio-->
+    <div class="modal fade" id="modalForm" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="container">
+                        <div class="card-body ">
+                            <form action="/save_directory" method="POST" class="was-validated">
+                                <fieldset class="container mt-4 scheduler-border">
+                                    <legend class="content mb-5 scheduler-border"> <span>AÑADIR DIRECTORIO</span>
+                                        <button type="submit" class="search-container btn  text-light mover "
+                                            style="background-color: #9d2449" tabindex="5"><i
+                                                class="fas fa-cloud"></i>&nbsp; Guardar</button>
+                                        <a href="/add-directory"><button type="button"
+                                                class=" search-container btn  text-light mover"
+                                                style="background-color: #dd9f42"><i class="fas fa-times"></i>&nbsp;
+                                                Cancelar </button></a>
+                                    </legend>
+                                    <!--Comienza el formulario de agregar un nueva notica-->
+                                    <fieldset class="container mt-4  scheduler-border1">
+                                        <legend class="content mb-4 scheduler-border1 text-light"> <span> <i
+                                                    class="far fa-newspaper text-white"></i>&nbsp; AÑADIR
+                                                DIRECTORIO</span>
+                                        </legend>
+                                        <div class="row row-cols-1 row-cols-md-2">
+                                            <div class="col">
+                                                <div class="mb-4 ">
+                                                    <input type="text" class="form-control is-invalid" id="loads"
+                                                        name="loads" tabindex="1" placeholder="Cargo" aria-label="Cargo"
+                                                        required>
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="mb-4">
+                                                    <input type="text" class="form-control" id="cct" name="cct"
+                                                        tabindex="1" placeholder="CTT" aria-label="CTT" required>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row row-cols-1 row-cols-md-1">
+                                            <div class="col">
+                                                <div class="mb-4">
+                                                    <input type="name" class="form-control" id="name" name="name"
+                                                        tabindex="1" placeholder="Nombre completo" aria-label="nombre"
+                                                        required>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row row-cols-1 row-cols-md-2">
+                                            <div class="col">
+                                                <div class="mb-4">
+                                                    <input type="text" class="form-control" id="school" name="school"
+                                                        tabindex="1" placeholder="Escuela" aria-label="Escuela"
+                                                        required>
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="mb-4">
+                                                    <select id="municipality" name="municipality" class="form-select "
+                                                        aria-label="Default select example" tabindex="2" required>
+                                                        <option value="">Elegir estado...</option>
+                                                        <option value="Balancán">Balancán</option>
+                                                        <option value="Cárdenas">Cárdenas</option>
+                                                        <option value="Centla">Centla</option>
+                                                        <option value="Centro">Centro</option>
+                                                        <option value="Comalcalco">Comalcalco</option>
+                                                        <option value="Cunduacán">Cunduacán</option>
+                                                        <option value="Emiliano Zapata">Emiliano Zapata</option>
+                                                        <option value="Huimanguillo">Huimanguillo</option>
+                                                        <option value="Jalapa">Jalapa</option>
+                                                        <option value="Jalpa de Méndez">Jalpa de Méndez</option>
+                                                        <option value="Jonuta">Jonuta</option>
+                                                        <option value="Macuspana">Macuspana</option>
+                                                        <option value="Nacajuca">Nacajuca</option>
+                                                        <option value="Paraíso">Paraíso</option>
+                                                        <option value="Tacotalpa">Tacotalpa</option>
+                                                        <option value="Teapa">Teapa</option>
+                                                        <option value="Tenosique">Tenosique</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row row-cols-1 row-cols-md-3">
+                                            <div class="col">
+                                                <div class="mb-4">
+                                                    <input type="email" class="form-control" id="mail" name="mail"
+                                                        tabindex="1" placeholder="Correo" aria-label="Correo" required>
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="mb-4">
+                                                    <input type="number" class="form-control" required minlength="4"
+                                                        maxlength="11" size="10" id="telephone" name="telephone"
+                                                        tabindex="1" placeholder="Télefono" aria-label="Télefono"
+                                                        required pattern="[0-9]">
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="mb-4">
+                                                    <input type="time" class="form-control" id="business_hours"
+                                                        name="business_hours" tabindex="1"
+                                                        placeholder="Horario de atención" aria-label="Horario" required>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </fieldset>
+                                </fieldset>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Termina modal crear directorio-->
+    <!--Cmienza modal pra subir imagen-->
+    <div class="modal fade" id="modalForm2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <form action="/files1" method="post" enctype="multipart/form-data">
+                        <fieldset class="container mt-4 scheduler-border">
+                            <legend class="content mb-5 scheduler-border"> <span>SUBIR IMAGEN</span>
+                            </legend>
+                            <fieldset class="container mt-4  scheduler-border1">
+                                <legend class="content mb-4 scheduler-border1 text-light"> <span> <i
+                                            class="far fa-newspaper text-white"></i>&nbsp; SUBIR IMAGEN</span>
+                                </legend>
+                                <input type="file" class="form-control" name="imagen">
+                                <br>
+                                <button type="submit" class="search-container btn  text-light mover "
+                                    style="background-color: #9d2449" tabindex="6"><i class="fas fa-cloud"></i>&nbsp;
+                                    Guardar</button>
+                                <a href="/anadir-directory"><button type="button"
+                                        class=" search-container btn  text-light mover"
+                                        style="background-color: #dd9f42"><i class="fas fa-times"></i>&nbsp;
+                                        Cancelar </button></a>
+                            </fieldset>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Termina modal pra subir imagen-->
+    <!--Inica Footer -->
+    <%- include('partials/footer'); -%>
+        <!-- Termina Footer -->
+        <!--inicia secccion de script-->
+        <!--script para el funcionamiento del modal editar directorio-->
+        <script type="text/javascript">
+            function guardarDato(id) {
+                var esperar = 2000;
+                $.ajax({
+                    url: '/edit-directory/' + id,
+                    beforeSend: function () {
+                        $('#edit-directory').text('Cargando..')
+                    },
+                    success: function (directorio) {
+                        console.log(directorio);
+                        Object.keys(directorio).map(e => {
+                            $('#' + e).val(directorio[e]);
+                        })
+                    }
+                })
+            }
+        </script>
+        <!--scrip para el funcionamiento del modal de cargar imagenes-->
+        <script type="text/javascript">
+            function guardarImagen1(id) {
+                var esperar = 2000;
+                $.ajax({
+                    url: '/files1' + id,
+                    beforeSend: function () {
+                        $('#imagen').text('Cargando..')
+                    },
+                    success: function (noticia) {
+
+                        Object.keys(imagen).map(e => {
+                            $('#' + e).val(imagen[e]);
+                        })
+                    }
+                })
+            }
+        </script>
+        <!-- Scripts para el funcinamiento de los estilos de bootstrap -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+            crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+        <!--script para el funcionamiento del datatable-->
+        <script type="text/javascript" language="javascript"
+            src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+        <script type="text/javascript" language="javascript"
+            src="https://cdn.datatables.net/1.11.3/js/dataTables.bootstrap5.min.js"></script>
+        <!--script para el funcionamiento del multulenguaje-->
+        <script src="/js/script.js"></script>
+        <!--scrip para el funcionamiento de lo iconos de fontaweso-->
+        <script src="https://kit.fontawesome.com/ccf41397b0.js" crossorigin="anonymous"></script>
+        <!--scrip para optimar tiempo de carga de la pagina-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+          <!--Script para el funcionamiento de los estilos de sweetalert-->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.9/dist/sweetalert2.all.min.js"></script>
+    <script src="/js/sweetalert.js"></script>
+
+</body>
+
+</html>
